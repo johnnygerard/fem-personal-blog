@@ -1,4 +1,5 @@
 import { loadTheme } from "@/app/actions";
+import AppRouterProvider from "@/component/app-router-provider";
 import ThemeProvider from "@/component/theme-provider";
 import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
@@ -67,7 +68,9 @@ const RootLayout = async ({ children }: Props) => {
           "bg-neutral-100 dark:bg-neutral-900",
         )}
       >
-        <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
+        <AppRouterProvider>
+          <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
+        </AppRouterProvider>
         <noscript>
           <div
             style={{
