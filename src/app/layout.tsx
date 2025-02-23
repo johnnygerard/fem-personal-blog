@@ -1,13 +1,20 @@
-import { clsx } from "clsx";
+import { cn } from "@/util/cn";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { DM_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { memo, ReactNode } from "react";
 
-const geistSans = Geist({
+const dmSans = DM_Sans({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-dm-sans",
+});
+
+const firaCode = Fira_Code({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-fira-code",
+  weight: "400",
 });
 
 const APP_NAME = "placeholder";
@@ -44,7 +51,11 @@ type Props = {
 const RootLayout = ({ children }: Props) => {
   return (
     <html
-      className={clsx(geistSans.variable, "font-sans antialiased")}
+      className={cn(
+        dmSans.variable,
+        firaCode.variable,
+        "font-sans antialiased",
+      )}
       lang="en-US"
     >
       <body>
