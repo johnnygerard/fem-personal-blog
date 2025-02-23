@@ -54,7 +54,8 @@ const RootLayout = ({ children }: Props) => {
       className={cn(
         dmSans.variable,
         firaCode.variable,
-        "font-sans antialiased",
+        "font-sans text-[1.125rem]/[1.5] font-normal not-italic antialiased",
+        "-tracking-[0.0125rem] text-neutral-600 dark:text-neutral-400",
       )}
       lang="en-US"
     >
