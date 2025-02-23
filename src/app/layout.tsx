@@ -21,8 +21,8 @@ const firaCode = Fira_Code({
   weight: "400",
 });
 
-const APP_NAME = "placeholder";
-const DESCRIPTION = "placeholder";
+const APP_NAME = "Personal blog";
+const DESCRIPTION = `Frontend Mentor challenge: ${APP_NAME}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com/placeholder"),
