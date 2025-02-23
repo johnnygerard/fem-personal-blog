@@ -26,13 +26,11 @@ const ThemeToggle = () => {
       }}
       aria-label="Dark theme"
     >
-      {({ isSelected }) =>
-        isSelected ? (
-          <IconSun aria-hidden="true" className="h-4 w-4" />
-        ) : (
-          <IconMoon aria-hidden="true" className="h-4 w-4" />
-        )
-      }
+      {({ isSelected }) => {
+        const Icon = isSelected ? IconSun : IconMoon;
+
+        return <Icon aria-hidden="true" className="h-4 w-4" />;
+      }}
     </ToggleButton>
   );
 };
