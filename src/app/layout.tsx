@@ -1,3 +1,6 @@
+import { loadTheme } from "@/app/actions";
+import ThemeProvider from "@/component/theme-provider";
+import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
 import { DM_Sans, Fira_Code } from "next/font/google";
@@ -48,9 +51,12 @@ type Props = {
   children: ReactNode;
 };
 
-const RootLayout = ({ children }: Props) => {
+const RootLayout = async ({ children }: Props) => {
+  const theme = await loadTheme();
+
   return (
     <html
+      data-theme={theme === THEME.SYSTEM ? null : theme}
       className={cn(
         dmSans.variable,
         firaCode.variable,
@@ -60,7 +66,7 @@ const RootLayout = ({ children }: Props) => {
       lang="en-US"
     >
       <body className="bg-neutral-100 dark:bg-neutral-900">
-        {children}
+        <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
         <noscript>
           <div
             style={{
