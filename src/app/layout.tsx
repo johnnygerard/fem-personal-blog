@@ -59,7 +59,7 @@ const RootLayout = ({ children }: Props) => {
       )}
       lang="en-US"
     >
-      <body>
+      <body className="bg-neutral-100 dark:bg-neutral-900">
         {children}
         <noscript>
           <div
