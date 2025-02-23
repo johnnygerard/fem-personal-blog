@@ -56,16 +56,17 @@ const RootLayout = async ({ children }: Props) => {
 
   return (
     <html
+      className={cn(dmSans.variable, firaCode.variable)}
       data-theme={theme === THEME.SYSTEM ? null : theme}
-      className={cn(
-        dmSans.variable,
-        firaCode.variable,
-        "font-sans text-[1.125rem]/[1.5] font-normal not-italic antialiased",
-        "-tracking-[0.0125rem] text-neutral-600 dark:text-neutral-400",
-      )}
       lang="en-US"
     >
-      <body className="bg-neutral-100 dark:bg-neutral-900">
+      <body
+        className={cn(
+          "font-sans text-[1.125rem]/[1.5] font-normal not-italic antialiased",
+          "-tracking-[0.0125rem] text-neutral-600 dark:text-neutral-400",
+          "bg-neutral-100 dark:bg-neutral-900",
+        )}
+      >
         <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
         <noscript>
           <div
