@@ -18,6 +18,7 @@ const Header = () => {
         alt="avatar"
         width="40"
         height="40"
+        priority
       />
       <ThemeToggle />
     </header>
