@@ -1,13 +1,7 @@
 import AppLink from "@/component/app-link";
+import { LINKS } from "@/constants";
 import { cn } from "@/util/cn";
 import { memo } from "react";
-
-const LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About" },
-  { href: "/newsletter", label: "Newsletter" },
-] as const;
 
 type Props = {
   className?: string;
