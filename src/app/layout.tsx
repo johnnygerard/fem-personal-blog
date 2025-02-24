@@ -68,14 +68,23 @@ const RootLayout = async ({ children }: Props) => {
           "font-sans text-[1.125rem]/[1.5] font-normal not-italic antialiased",
           "-tracking-[0.0125rem] text-neutral-600 dark:text-neutral-400",
           "bg-neutral-100 dark:bg-neutral-900",
-          "flex min-h-screen flex-col",
+          "justify-center tb:flex",
         )}
       >
         <AppRouterProvider>
           <ThemeProvider initialTheme={theme}>
-            <Header />
-            <main className="relative flex-1">{children}</main>
-            <Footer />
+            <div
+              className={cn(
+                "flex min-h-screen min-w-min flex-col tb:w-[40rem]",
+                "py-200 tb:py-250 dt:pb-400",
+              )}
+            >
+              <Header className="max-tb:px-200" />
+              <div className="flex flex-1 flex-col px-7.75 tb:px-5">
+                <main className="relative flex-1">{children}</main>
+                <Footer />
+              </div>
+            </div>
           </ThemeProvider>
         </AppRouterProvider>
         <noscript>

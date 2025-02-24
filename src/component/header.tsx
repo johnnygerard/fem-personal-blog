@@ -9,7 +9,11 @@ import Image from "next/image";
 import { memo, useRef } from "react";
 import { useButton, useDisclosure } from "react-aria";
 
-const Header = () => {
+type Props = {
+  className: string;
+};
+
+const Header = ({ className }: Props) => {
   const disclosureProps = { defaultExpanded: false };
   const disclosureState = useDisclosureState(disclosureProps);
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +26,7 @@ const Header = () => {
   const { buttonProps: triggerProps } = useButton(buttonProps, triggerRef);
 
   return (
-    <header>
+    <header className={className}>
       <div
         className={cn(
           "flex gap-75 rounded-10 p-75 tb:gap-250",
