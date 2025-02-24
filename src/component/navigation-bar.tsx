@@ -14,7 +14,7 @@ const NavigationBar = () => {
       <ul className="flex h-full items-center gap-300">
         {LINKS.map(({ href, label }) => (
           <li key={href}>
-            <AppLink href={href}>
+            <AppLink className="rounded-4" href={href}>
               <Text
                 className={cn(
                   "underline-offset-[0.0625rem] [text-decoration-skip-ink:none]",

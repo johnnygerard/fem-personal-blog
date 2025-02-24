@@ -77,6 +77,7 @@
   --font-mono: var(--font-fira-code);
   --font-sans: var(--font-dm-sans);
 
+  --radius-2: 0.125rem;
   --radius-4: 0.25rem;
   --radius-6: 0.375rem;
   --radius-8: 0.5rem;

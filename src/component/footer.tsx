@@ -41,7 +41,7 @@ const Footer = () => {
         <ul className="flex gap-200">
           {LINKS.map(({ Icon, href }, index) => (
             <li key={index}>
-              <AppLink className="block h-4" href={href}>
+              <AppLink className="block h-4 rounded-2" href={href}>
                 <Icon className="h-full" />
               </AppLink>
             </li>
