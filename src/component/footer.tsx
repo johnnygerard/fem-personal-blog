@@ -37,7 +37,7 @@ const Footer = () => {
       <small>
         <Text variant="sm">Made with ❤️ and ☕️</Text>
       </small>
-      <nav>
+      <nav aria-label="Social media">
         <ul className="flex gap-200">
           {LINKS.map(({ Icon, href }, index) => (
             <li key={index}>
