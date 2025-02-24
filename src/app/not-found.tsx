@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const NotFound = () => {
   return (
-    <div className="grid min-h-screen place-items-center">
+    <div className="absolute grid h-full w-full place-items-center">
       <div className="text-center">
         <h1>404 Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
