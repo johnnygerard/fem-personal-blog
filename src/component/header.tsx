@@ -11,7 +11,7 @@ const Header = () => {
         "flex gap-75 rounded-10 p-75",
         "border border-neutral-200 dark:border-neutral-700",
         "bg-neutral-0 dark:bg-neutral-800",
-        "[box-shadow:0_6px_10px_rgba(123,123,123,0.03)]",
+        "shadow-[0_6px_10px_rgba(123,123,123,0.03)]",
       )}
     >
       <Image
