@@ -1,5 +1,6 @@
 import { loadTheme } from "@/app/actions";
 import AppRouterProvider from "@/component/app-router-provider";
+import Footer from "@/component/footer";
 import Header from "@/component/header";
 import ThemeProvider from "@/component/theme-provider";
 import { THEME } from "@/type/theme";
@@ -73,6 +74,7 @@ const RootLayout = async ({ children }: Props) => {
           <ThemeProvider initialTheme={theme}>
             <Header />
             {children}
+            <Footer />
           </ThemeProvider>
         </AppRouterProvider>
         <noscript>
