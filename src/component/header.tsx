@@ -1,11 +1,25 @@
+"use client";
 import NavigationMenu from "@/component/navigation-menu";
 import NavigationMenuToggle from "@/component/navigation-menu-toggle";
 import ThemeToggle from "@/component/theme-toggle";
 import { cn } from "@/util/cn";
+import { useDisclosureState } from "@react-stately/disclosure";
 import Image from "next/image";
-import { memo } from "react";
+import { memo, useRef } from "react";
+import { useButton, useDisclosure } from "react-aria";
 
 const Header = () => {
+  const disclosureProps = { defaultExpanded: false };
+  const disclosureState = useDisclosureState(disclosureProps);
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const { buttonProps, panelProps } = useDisclosure(
+    disclosureProps,
+    disclosureState,
+    panelRef,
+  );
+  const { buttonProps: triggerProps } = useButton(buttonProps, triggerRef);
+
   return (
     <header>
       <div
@@ -24,10 +38,16 @@ const Header = () => {
           height="40"
           priority
         />
-        <NavigationMenuToggle />
+        <NavigationMenuToggle
+          isExpanded={disclosureState.isExpanded}
+          triggerRef={triggerRef}
+          triggerProps={triggerProps}
+        />
         <ThemeToggle />
       </div>
-      <NavigationMenu className="mt-150" />
+      <div ref={panelRef} {...panelProps}>
+        <NavigationMenu className="mt-150" />
+      </div>
     </header>
   );
 };

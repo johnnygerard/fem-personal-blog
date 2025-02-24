@@ -3,29 +3,43 @@ import AppFocusRing from "@/component/app-focus-ring";
 import IconClose from "@/component/svg/icon-close";
 import IconMenu from "@/component/svg/icon-menu";
 import { cn } from "@/util/cn";
-import { memo, useState } from "react";
-import { ToggleButton } from "react-aria-components";
+import { ButtonHTMLAttributes, memo, RefObject } from "react";
 
-const NavigationMenuToggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
+type Props = {
+  isExpanded: boolean;
+  triggerRef: RefObject<HTMLButtonElement | null>;
+  triggerProps: ButtonHTMLAttributes<HTMLButtonElement>;
+};
+
+const NavigationMenuToggle = ({
+  isExpanded,
+  triggerRef,
+  triggerProps,
+}: Props) => {
+  const NavigationMenuIcon = isExpanded ? IconClose : IconMenu;
 
   return (
     <AppFocusRing>
-      <ToggleButton
-        aria-label="Menu"
+      <button
+        ref={triggerRef}
+        {...triggerProps}
+        aria-label="Navigation menu"
+        type="button"
         className={cn(
           "h-10 w-10 rounded-10 bg-transparent p-2.5 transition-[background-color]",
-          isOpen && "bg-neutral-700 dark:bg-neutral-0",
+          isExpanded && "bg-neutral-700 dark:bg-neutral-0",
         )}
-        isSelected={isOpen}
-        onChange={setIsOpen}
       >
-        {isOpen ? (
-          <IconClose className="animate-fade-in text-neutral-0 dark:text-neutral-900" />
-        ) : (
-          <IconMenu className="animate-fade-in text-neutral-700 dark:text-neutral-0" />
-        )}
-      </ToggleButton>
+        <NavigationMenuIcon
+          aria-hidden="true"
+          className={cn(
+            "animate-fade-in",
+            isExpanded
+              ? "text-neutral-0 dark:text-neutral-900"
+              : "text-neutral-700 dark:text-neutral-0",
+          )}
+        />
+      </button>
     </AppFocusRing>
   );
 };
