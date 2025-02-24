@@ -112,11 +112,6 @@
   @keyframes focusRing {
     from {
       outline-color: transparent;
-      box-shadow: transparent 0 0 0 2px;
-    }
-
-    to {
-      box-shadow: var(--color-neutral-0) 0 0 0 2px;
     }
   }
   --animate-focus-ring: focusRing var(--default-transition-duration)

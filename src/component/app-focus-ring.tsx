@@ -7,7 +7,6 @@ const AppFocusRing = (props: FocusRingProps) => {
     <FocusRing
       focusRingClass={cn(
         "animate-focus-ring outline-2 outline-offset-2 outline-blue-500",
-        "ring-2 ring-white",
       )}
       {...props}
     />
