@@ -1,6 +1,8 @@
 import AppLink from "@/component/app-link";
+import Text from "@/component/text";
 import { LINKS } from "@/constants";
 import { cn } from "@/util/cn";
+import { usePathname } from "next/navigation";
 import { memo } from "react";
 
 type Props = {
@@ -8,6 +10,8 @@ type Props = {
 };
 
 const NavigationMenu = ({ className }: Props) => {
+  const pathname = usePathname();
+
   return (
     <nav
       className={cn(
@@ -27,7 +31,22 @@ const NavigationMenu = ({ className }: Props) => {
               "border-neutral-200 dark:border-neutral-700",
             )}
           >
-            <AppLink href={href}>{label}</AppLink>
+            <AppLink href={href}>
+              {({ isHovered }) => {
+                const isHighlighted = pathname === href || isHovered;
+
+                return (
+                  <Text
+                    variant={isHighlighted ? "h6" : "base"}
+                    className={cn(
+                      isHighlighted && "text-neutral-900 dark:text-neutral-0",
+                    )}
+                  >
+                    {label}
+                  </Text>
+                );
+              }}
+            </AppLink>
           </li>
         ))}
       </ul>
