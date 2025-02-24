@@ -32,10 +32,7 @@ const ThemeToggle = () => {
           const Icon = isSelected ? IconSun : IconMoon;
 
           return (
-            <Icon
-              aria-hidden="true"
-              className="h-4 w-4 animate-[fadeIn_0.4s]"
-            />
+            <Icon aria-hidden="true" className="h-4 w-4 animate-fade-in" />
           );
         }}
       </ToggleButton>
