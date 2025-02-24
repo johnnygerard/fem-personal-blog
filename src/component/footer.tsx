@@ -42,7 +42,7 @@ const Footer = () => {
           {LINKS.map(({ Icon, href }, index) => (
             <li key={index}>
               <AppLink className="block h-4 rounded-2" href={href}>
-                <Icon className="h-full" />
+                <Icon className="h-full transition-opacity hover:opacity-70" />
               </AppLink>
             </li>
           ))}

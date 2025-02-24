@@ -15,17 +15,19 @@ const NavigationBar = () => {
         {LINKS.map(({ href, label }) => (
           <li key={href}>
             <AppLink className="rounded-4" href={href}>
-              <Text
-                className={cn(
-                  "underline-offset-[0.0625rem] [text-decoration-skip-ink:none]",
-                  "decoration-blue-500 decoration-[0.1875rem] dark:decoration-blue-700",
-                  pathname === href &&
-                    "text-neutral-700 underline dark:text-neutral-0",
-                )}
-                variant="sm"
-              >
-                {label}
-              </Text>
+              {({ isHovered }) => (
+                <Text
+                  className={cn(
+                    "underline-offset-[0.0625rem] [text-decoration-skip-ink:none]",
+                    "decoration-blue-500 decoration-[0.1875rem] dark:decoration-blue-700",
+                    (pathname === href || isHovered) &&
+                      "text-neutral-700 underline dark:text-neutral-0",
+                  )}
+                  variant="sm"
+                >
+                  {label}
+                </Text>
+              )}
             </AppLink>
           </li>
         ))}
