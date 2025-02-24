@@ -45,7 +45,7 @@ const Header = () => {
         />
         <ThemeToggle />
       </div>
-      <div ref={panelRef} {...panelProps}>
+      <div className="tb:hidden" ref={panelRef} {...panelProps}>
         <NavigationMenu className="mt-150" />
       </div>
     </header>

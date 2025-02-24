@@ -26,6 +26,7 @@ const NavigationMenuToggle = ({
         aria-label="Navigation menu"
         type="button"
         className={cn(
+          "tb:hidden",
           "h-10 w-10 rounded-10 bg-transparent p-2.5 transition-[background-color]",
           isExpanded && "bg-neutral-700 dark:bg-neutral-0",
         )}
