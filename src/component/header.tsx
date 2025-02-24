@@ -1,4 +1,5 @@
 "use client";
+import NavigationBar from "@/component/navigation-bar";
 import NavigationMenu from "@/component/navigation-menu";
 import NavigationMenuToggle from "@/component/navigation-menu-toggle";
 import ThemeToggle from "@/component/theme-toggle";
@@ -24,7 +25,7 @@ const Header = () => {
     <header>
       <div
         className={cn(
-          "flex gap-75 rounded-10 p-75",
+          "flex gap-75 rounded-10 p-75 tb:gap-250",
           "border border-neutral-200 dark:border-neutral-700",
           "bg-neutral-0 dark:bg-neutral-800",
           "shadow-[0_6px_10px_rgba(123,123,123,0.03)]",
@@ -43,6 +44,7 @@ const Header = () => {
           triggerRef={triggerRef}
           triggerProps={triggerProps}
         />
+        <NavigationBar />
         <ThemeToggle />
       </div>
       <div className="tb:hidden" ref={panelRef} {...panelProps}>
