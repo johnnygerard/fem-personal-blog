@@ -8,7 +8,7 @@ type Props = {
 
 const PublicationDate = ({ date }: Props) => {
   return (
-    <p>
+    <p className="mt-150">
       <Text
         className="italic"
         variant="sm"
