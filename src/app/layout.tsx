@@ -3,6 +3,7 @@ import AppRouterProvider from "@/component/app-router-provider";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
 import ThemeProvider from "@/component/theme-provider";
+import VerticalLine from "@/component/vertical-line";
 import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
@@ -75,10 +76,12 @@ const RootLayout = async ({ children }: Props) => {
           <ThemeProvider initialTheme={theme}>
             <div
               className={cn(
-                "flex min-h-screen min-w-min flex-col tb:w-[40rem]",
+                "relative flex min-h-screen min-w-min flex-col tb:w-[40rem]",
                 "py-200 tb:py-250 dt:pb-400",
               )}
             >
+              <VerticalLine side="left" />
+              <VerticalLine side="right" />
               <Header className="max-tb:px-200" />
               <div className="flex flex-1 flex-col px-7.75 tb:px-5">
                 <main className="relative flex-1">{children}</main>
