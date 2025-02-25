@@ -90,7 +90,7 @@ const RootLayout = async ({ children }: Props) => {
                 )}
               >
                 <main className="relative flex-1">{children}</main>
-                <Footer />
+                <Footer className="mt-400 dt:mt-600" />
               </div>
             </div>
           </ThemeProvider>
