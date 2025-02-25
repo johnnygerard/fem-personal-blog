@@ -83,7 +83,12 @@ const RootLayout = async ({ children }: Props) => {
               <VerticalLine side="left" />
               <VerticalLine side="right" />
               <Header className="max-tb:px-200" />
-              <div className="flex flex-1 flex-col px-7.75 tb:px-5">
+              <div
+                className={cn(
+                  "mt-400 dt:mt-600",
+                  "flex flex-1 flex-col px-7.75 tb:px-5",
+                )}
+              >
                 <main className="relative flex-1">{children}</main>
                 <Footer />
               </div>
