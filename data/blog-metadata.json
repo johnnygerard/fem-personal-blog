@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Balancing Hobbies and Coding: How Hiking and Rock Climbing Help Me Stay Motivated",
+    "slug": "balancing-hobbies-and-coding",
+    "publishedAt": "2025-02-18T00:00:00Z",
+    "description": "Thoughts on maintaining energy and focus through outdoor activities and exercise."
+  },
+  {
+    "title": "Reading for Inspiration: 5 Books That Shaped My Coding Journey",
+    "slug": "5-books-that-shaped-my-coding-journey",
+    "publishedAt": "2025-02-15T00:00:00Z",
+    "description": "A few of my favorite books, both fiction and non-fiction, that keep me motivated."
+  },
+  {
+    "title": "Overcoming Imposter Syndrome as a New Developer",
+    "slug": "overcoming-imposter-syndrome",
+    "publishedAt": "2025-02-10T00:00:00Z",
+    "description": "Tips and personal reflections on dealing with self-doubt when learning to code."
+  },
+  {
+    "title": "Exploring the World of Responsive Design",
+    "slug": "exploring-responsive-design",
+    "publishedAt": "2025-02-04T00:00:00Z",
+    "description": "The importance of making websites look great on different devices."
+  },
+  {
+    "title": "My Favorite Dev Tools for Productivity",
+    "slug": "dev-tools-for-productivity",
+    "publishedAt": "2025-01-29T00:00:00Z",
+    "description": "A quick look at the tools I rely on, from code editors to browser extensions."
+  },
+  {
+    "title": "Understanding JavaScript Basics",
+    "slug": "understanding-javascript-basics",
+    "publishedAt": "2025-01-28T00:00:00Z",
+    "description": "My adventure into JavaScript's fundamentals—variables, functions, loops, and more."
+  },
+  {
+    "title": "Learning HTML & CSS: My First Week",
+    "slug": "learning-html-css",
+    "publishedAt": "2025-01-16T00:00:00Z",
+    "description": "A recap of my first steps in web development, from basic tags to styling techniques."
+  },
+  {
+    "title": "Why I Chose Front-End Web Development",
+    "slug": "why-i-chose-front-end-web-development",
+    "publishedAt": "2025-01-12T00:00:00Z",
+    "description": "The reasons behind my shift to front-end and why this path excites me."
+  }
+]
