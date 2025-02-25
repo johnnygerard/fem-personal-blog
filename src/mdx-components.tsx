@@ -4,7 +4,7 @@ import type { MDXComponents } from "mdx/types";
 
 export const useMDXComponents = (components: MDXComponents): MDXComponents => {
   return {
-    hr: () => <Divider />,
+    hr: () => <Divider className="first-of-type:my-400" />,
     h1: ({ children }) => (
       <h1 className="text-neutral-700 dark:text-neutral-0">
         <Text variant="h1">{children}</Text>
