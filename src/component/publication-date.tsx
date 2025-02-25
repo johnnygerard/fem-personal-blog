@@ -1,3 +1,4 @@
+import Text from "@/component/text";
 import { formatDate } from "@/util/format-date";
 import { memo } from "react";
 
@@ -6,7 +7,14 @@ type Props = {
 };
 
 const PublicationDate = ({ date }: Props) => {
-  return <p>{`Published ${formatDate(date)}`}</p>;
+  return (
+    <p>
+      <Text
+        className="italic"
+        variant="sm"
+      >{`Published ${formatDate(date)}`}</Text>
+    </p>
+  );
 };
 
 export default memo(PublicationDate);
