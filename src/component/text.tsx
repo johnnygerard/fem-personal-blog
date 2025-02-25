@@ -2,6 +2,7 @@ import { cn } from "@/util/cn";
 import { memo } from "react";
 
 const VARIANT = {
+  CODE: "code",
   H1: "h1",
   H2: "h2",
   H3: "h3",
@@ -25,6 +26,7 @@ const Text = ({ children, className, variant = VARIANT.BASE }: Props) => {
     <span
       className={cn(
         {
+          [VARIANT.CODE]: "font-mono text-[1rem]/[1.46] -tracking-[0.025rem]",
           [VARIANT.H1]:
             "text-[2.5rem]/[1.3] font-extrabold -tracking-[0.0625rem]",
           [VARIANT.H2]:
