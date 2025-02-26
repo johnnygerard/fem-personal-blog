@@ -11,8 +11,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   blockquote: ({ children }) => (
     <blockquote
       className={cn(
-        "border-s-4 border-neutral-400 dark:border-neutral-600",
-        "px-150 py-75",
+        "border-s-4 border-neutral-400 px-150 dark:border-neutral-600",
       )}
     >
       {children}
