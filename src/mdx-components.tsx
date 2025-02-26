@@ -1,4 +1,5 @@
 import Divider from "@/component/divider";
+import Heading from "@/component/heading";
 import Text from "@/component/text";
 import { cn } from "@/util/cn";
 import type { MDXComponents } from "mdx/types";
@@ -34,17 +35,12 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   },
   em: ({ children }) => <em className="italic">{children}</em>,
   hr: () => <Divider className="first-of-type:my-400" />,
-  h1: ({ children }) => (
-    <h1 className="text-neutral-700 dark:text-neutral-0">
-      <Text variant="h1">{children}</Text>
-    </h1>
-  ),
-  h2: ({ children }) => (
-    <h2 className="text-neutral-700 dark:text-neutral-0">
-      {/* This is not an error: h2 is styled with h3 variant. */}
-      <Text variant="h3">{children}</Text>
-    </h2>
-  ),
+  h1: ({ children }) => <Heading level={1}>{children}</Heading>,
+  h2: ({ children }) => <Heading level={2}>{children}</Heading>,
+  h3: ({ children }) => <Heading level={3}>{children}</Heading>,
+  h4: ({ children }) => <Heading level={4}>{children}</Heading>,
+  h5: ({ children }) => <Heading level={5}>{children}</Heading>,
+  h6: ({ children }) => <Heading level={6}>{children}</Heading>,
   ol: ({ children }) => (
     <ol className={cn(listClassName, "list-decimal")}>{children}</ol>
   ),
