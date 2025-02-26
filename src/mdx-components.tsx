@@ -8,11 +8,13 @@ const listClassName =
 
 export const useMDXComponents = (components: MDXComponents): MDXComponents => {
   return {
-    code: ({ children, className }) => {
-      const isInline = !className;
+    code: ({ children, ...props }) => {
+      const isInline = !props.isCodeBlock;
+      delete props.isCodeBlock;
 
       return (
         <code
+          {...props}
           className={cn(
             isInline && "rounded-4 bg-neutral-200 px-50 dark:bg-neutral-700",
           )}
@@ -45,7 +47,13 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => {
           "border border-neutral-200 dark:border-neutral-700",
         )}
       >
-        {children}
+        {{
+          ...children,
+          props: {
+            ...children.props,
+            isCodeBlock: true,
+          },
+        }}
       </pre>
     ),
     strong: ({ children }) => <strong className="font-bold">{children}</strong>,
