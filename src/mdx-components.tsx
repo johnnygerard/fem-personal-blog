@@ -7,6 +7,16 @@ const listClassName =
   "mt-150 flex list-outside flex-col gap-150 ps-7 marker:font-bold";
 
 export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
+  blockquote: ({ children }) => (
+    <blockquote
+      className={cn(
+        "border-s-4 border-neutral-400 dark:border-neutral-600",
+        "px-150 py-75",
+      )}
+    >
+      {children}
+    </blockquote>
+  ),
   code: ({ children, ...props }) => {
     const isInline = !props.isCodeBlock;
     delete props.isCodeBlock;
