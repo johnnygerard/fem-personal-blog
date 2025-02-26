@@ -32,7 +32,7 @@ If you've been around my blog before, you know how _excited_ I get about front-e
 > “Design is not just what it looks like and feels like. Design is how it works.”
 > — Steve Jobs
 
-- **Fluid Layouts**: Instead of fixed widths, use percentages or `max-width` for images and containers. This helps elements adapt smoothly when screens shrink or expand.
+- **Fluid Layouts**: Instead of fixed widths, use percentages or `max-width{:css}` for images and containers. This helps elements adapt smoothly when screens shrink or expand.
 - **Media Queries**: These allow you to apply specific CSS rules based on screen size (or orientation). For example, you might change the layout from a single column on mobile to two columns on a tablet.
 - **Mobile-First Approach**: Start styling for the smallest screens, then add layers of complexity as devices get bigger. It can feel odd at first, but it often simplifies your CSS and improves performance.
 
@@ -58,8 +58,8 @@ Below is a quick code snippet illustrating how you might use **media queries** t
 }
 ```
 
-1. **Default (Mobile)**: I give `.container` a block layout so the elements stack vertically.
-2. **Media Query**: Once the screen is at least 768px wide, `.container` becomes `flex`, making items line up side by side.
+1. **Default (Mobile)**: I give `.container{:css}` a block layout so the elements stack vertically.
+2. **Media Query**: Once the screen is at least 768px wide, `.container{:css}` becomes `flex{:css}`, making items line up side by side.
 
 ---
 
