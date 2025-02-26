@@ -13,6 +13,7 @@ const rehypePrettyCodeOptions: Options = {
 
 const withMDX = createMDX({
   options: {
+    format: "mdx",
     remarkPlugins: [],
     rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
