@@ -46,8 +46,14 @@ const Footer = ({ className }: Props) => {
         <ul className="flex gap-200">
           {LINKS.map(({ Icon, href }, index) => (
             <li key={index}>
-              <AppLink className="block h-4 rounded-2" href={href}>
-                <Icon className="h-full transition-opacity hover:opacity-70" />
+              <AppLink
+                className={cn(
+                  "block h-4 rounded-2",
+                  "transition-opacity data-[hovered]:opacity-70",
+                )}
+                href={href}
+              >
+                <Icon className="h-full" />
               </AppLink>
             </li>
           ))}
