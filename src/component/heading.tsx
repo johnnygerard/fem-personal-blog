@@ -5,10 +5,11 @@ import { memo, ReactNode } from "react";
 type Props = {
   children: ReactNode;
   className?: string;
+  hasDecoration?: true;
   level: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-const Heading = ({ children, className, level }: Props) => {
+const Heading = ({ children, className, hasDecoration, level }: Props) => {
   const Tag = `h${level}` as const;
 
   return (
@@ -19,7 +20,18 @@ const Heading = ({ children, className, level }: Props) => {
         className,
       )}
     >
-      <Text variant={Tag}>{children}</Text>
+      <Text className={cn(hasDecoration && "relative")} variant={Tag}>
+        {children}
+        {hasDecoration && (
+          <span
+            aria-hidden="true"
+            className={cn(
+              "h-0.75 w-10 bg-blue-500",
+              "absolute -right-2.5 bottom-2 translate-x-full",
+            )}
+          />
+        )}
+      </Text>
     </Tag>
   );
 };
