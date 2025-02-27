@@ -30,8 +30,8 @@
 
 /* @see https://rehype-pretty.pages.dev/#multiple-themes-dark-and-light-mode */
 /* @see https://shiki.style/guide/dual-themes */
-code[data-theme*=" "],
-code[data-theme*=" "] span {
+code[data-language][data-theme],
+code[data-language][data-theme] span {
   /* Text color */
   @apply text-(--shiki-light) dark:text-(--shiki-dark);
 
