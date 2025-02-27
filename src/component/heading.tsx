@@ -31,7 +31,7 @@ const Heading = ({
             aria-hidden="true"
             className={cn(
               "h-0.75 w-10 bg-blue-500",
-              "absolute -right-2.5 bottom-2 translate-x-full",
+              "absolute -end-2.5 bottom-2 translate-x-full rtl:-translate-x-full",
             )}
           />
         )}
