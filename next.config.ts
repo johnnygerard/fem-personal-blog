@@ -1,6 +1,7 @@
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 import rehypePrettyCode, { Options } from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 const rehypePrettyCodeOptions: Options = {
   keepBackground: false, // Do not use theme background colors
@@ -14,7 +15,7 @@ const rehypePrettyCodeOptions: Options = {
 const withMDX = createMDX({
   options: {
     format: "mdx",
-    remarkPlugins: [],
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
 });
