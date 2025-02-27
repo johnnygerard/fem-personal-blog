@@ -38,7 +38,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
     );
   },
   em: ({ children }) => <em className="italic">{children}</em>,
-  hr: () => <Divider className="first-of-type:my-400" />,
+  hr: () => <Divider className="my-300 first-of-type:my-400" />,
   h1: ({ children }) => <Heading level={1}>{children}</Heading>,
   h2: ({ children }) => (
     <Heading className={MARGIN_TOP} level={2}>

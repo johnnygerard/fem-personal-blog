@@ -8,7 +8,7 @@ type Props = {
 const Divider = ({ className }: Props) => (
   <hr
     className={cn(
-      "my-300 border-neutral-200 first:border-8 dark:border-neutral-700",
+      "border-neutral-200 first:border-8 dark:border-neutral-700",
       className,
     )}
   />
