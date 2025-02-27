@@ -7,9 +7,16 @@ type Props = {
   className?: string;
   hasDecoration?: true;
   level: 1 | 2 | 3 | 4 | 5 | 6;
+  styleLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-const Heading = ({ children, className, hasDecoration, level }: Props) => {
+const Heading = ({
+  children,
+  className,
+  hasDecoration,
+  level,
+  styleLevel = level,
+}: Props) => {
   const Tag = `h${level}` as const;
 
   return (
@@ -20,7 +27,10 @@ const Heading = ({ children, className, hasDecoration, level }: Props) => {
         className,
       )}
     >
-      <Text className={cn(hasDecoration && "relative")} variant={Tag}>
+      <Text
+        className={cn(hasDecoration && "relative")}
+        variant={`h${styleLevel}`}
+      >
         {children}
         {hasDecoration && (
           <span
