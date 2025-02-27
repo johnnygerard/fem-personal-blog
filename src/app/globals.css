@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "tailwindcss-react-aria-components";
 
 /* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
 @layer base {
