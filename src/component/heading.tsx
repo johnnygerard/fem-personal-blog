@@ -12,7 +12,13 @@ const Heading = ({ children, className, level }: Props) => {
   const Tag = `h${level}` as const;
 
   return (
-    <Tag className={cn("text-neutral-700 dark:text-neutral-0", className)}>
+    <Tag
+      className={cn(
+        level > 1 && "mt-150",
+        "text-neutral-700 dark:text-neutral-0",
+        className,
+      )}
+    >
       <Text variant={Tag}>{children}</Text>
     </Tag>
   );

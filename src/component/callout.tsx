@@ -27,7 +27,7 @@ const Callout = ({ type, title, content }: Props) => {
   return (
     <div
       className={cn(
-        "my-150 flex gap-100 rounded-12 border p-150",
+        "mt-150 flex gap-100 rounded-12 border p-150",
         {
           tip: "border-green-500 dark:border-green-700",
           warning: "border-yellow-500 dark:border-yellow-700",
