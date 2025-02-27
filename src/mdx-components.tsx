@@ -4,9 +4,13 @@ import Text from "@/component/text";
 import { cn } from "@/util/cn";
 import type { MDXComponents } from "mdx/types";
 
-const listClassName =
-  "mt-150 flex list-outside flex-col gap-150 ps-7 marker:font-bold";
+const MARGIN_TOP = "mt-150";
 const TABLE_BORDER_COLORS = "border-neutral-200 dark:border-neutral-700";
+
+const listClassName = cn(
+  MARGIN_TOP,
+  "flex list-outside flex-col gap-150 ps-7 marker:font-bold",
+);
 
 export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   blockquote: ({ children }) => (
@@ -36,19 +40,40 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   em: ({ children }) => <em className="italic">{children}</em>,
   hr: () => <Divider className="first-of-type:my-400" />,
   h1: ({ children }) => <Heading level={1}>{children}</Heading>,
-  h2: ({ children }) => <Heading level={2}>{children}</Heading>,
-  h3: ({ children }) => <Heading level={3}>{children}</Heading>,
-  h4: ({ children }) => <Heading level={4}>{children}</Heading>,
-  h5: ({ children }) => <Heading level={5}>{children}</Heading>,
-  h6: ({ children }) => <Heading level={6}>{children}</Heading>,
+  h2: ({ children }) => (
+    <Heading className={MARGIN_TOP} level={2}>
+      {children}
+    </Heading>
+  ),
+  h3: ({ children }) => (
+    <Heading className={MARGIN_TOP} level={3}>
+      {children}
+    </Heading>
+  ),
+  h4: ({ children }) => (
+    <Heading className={MARGIN_TOP} level={4}>
+      {children}
+    </Heading>
+  ),
+  h5: ({ children }) => (
+    <Heading className={MARGIN_TOP} level={5}>
+      {children}
+    </Heading>
+  ),
+  h6: ({ children }) => (
+    <Heading className={MARGIN_TOP} level={6}>
+      {children}
+    </Heading>
+  ),
   ol: ({ children }) => (
     <ol className={cn(listClassName, "list-decimal")}>{children}</ol>
   ),
-  p: ({ children }) => <p className="mt-150">{children}</p>,
+  p: ({ children }) => <p className={MARGIN_TOP}>{children}</p>,
   pre: ({ children }) => (
     <pre
       className={cn(
-        "mt-150 rounded-12 bg-neutral-200 p-150 dark:bg-neutral-800",
+        MARGIN_TOP,
+        "rounded-12 bg-neutral-200 p-150 dark:bg-neutral-800",
         "border border-neutral-200 dark:border-neutral-700",
       )}
     >
@@ -65,7 +90,8 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   table: ({ children }) => (
     <table
       className={cn(
-        "mt-150 w-full table-fixed border-collapse divide-y rounded-8",
+        MARGIN_TOP,
+        "w-full table-fixed border-collapse divide-y rounded-8",
         // A ring is used because a border does not follow the border radius.
         // The outline works on Chrome but not on Firefox.
         "inset-ring inset-ring-neutral-200 dark:inset-ring-neutral-700",

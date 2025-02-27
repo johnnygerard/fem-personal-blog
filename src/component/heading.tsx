@@ -20,13 +20,7 @@ const Heading = ({
   const Tag = `h${level}` as const;
 
   return (
-    <Tag
-      className={cn(
-        level > 1 && "mt-150",
-        "text-neutral-700 dark:text-neutral-0",
-        className,
-      )}
-    >
+    <Tag className={cn("text-neutral-700 dark:text-neutral-0", className)}>
       <Text
         className={cn(hasDecoration && "relative")}
         variant={`h${styleLevel}`}
