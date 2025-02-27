@@ -68,7 +68,9 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   ol: ({ children }) => (
     <ol className={cn(listClassName, "list-decimal")}>{children}</ol>
   ),
-  p: ({ children }) => <p className={MARGIN_TOP}>{children}</p>,
+  p: ({ children }) => (
+    <p className={cn(MARGIN_TOP, "group-[.is-callout]:mt-75")}>{children}</p>
+  ),
   pre: ({ children }) => (
     <pre
       className={cn(

@@ -3,15 +3,15 @@ import IconLightBulb from "@/component/svg/icon-light-bulb";
 import IconWarning from "@/component/svg/icon-warning";
 import Text from "@/component/text";
 import { cn } from "@/util/cn";
-import { memo } from "react";
+import { memo, ReactNode } from "react";
 
 type Props = {
   type: "tip" | "warning" | "info";
   title: string;
-  content: string;
+  children: ReactNode;
 };
 
-const Callout = ({ type, title, content }: Props) => {
+const Callout = ({ type, title, children }: Props) => {
   const head = {
     tip: "Tip",
     warning: "Warning",
@@ -51,13 +51,13 @@ const Callout = ({ type, title, content }: Props) => {
           }
         />
       </div>
-      <div className="flex-1">
+      <div className="group is-callout flex-1">
         <p>
           <Text className="text-neutral-700 dark:text-neutral-0" variant="h5">
             {`${head}: ${title}`}
           </Text>
         </p>
-        <p className="mt-75">{content}</p>
+        {children}
       </div>
     </div>
   );
