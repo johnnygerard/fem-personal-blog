@@ -3,9 +3,7 @@ import ArticlePreview from "@/component/article-preview";
 import Divider from "@/component/divider";
 import Heading from "@/component/heading";
 import SocialMediaLinks from "@/component/social-media-links";
-import Text from "@/component/text";
 import { BlogMetadata } from "@/type/blog-metadata";
-import { cn } from "@/util/cn";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
@@ -54,23 +52,8 @@ const HomePage = async () => {
           </li>
         ))}
       </ul>
-      <AppLink
-        className={cn(
-          "rounded-8 transition-opacity data-[hovered]:opacity-70",
-          "mt-400 inline-block",
-        )}
-        href="/blog"
-      >
-        <Text
-          className={cn(
-            "text-neutral-700 dark:text-neutral-0",
-            "underline decoration-[0.1875rem] [text-underline-position:under]",
-            "decoration-blue-500 dark:decoration-blue-700",
-          )}
-          variant="h6"
-        >
-          View all articles
-        </Text>
+      <AppLink variant="primary" className="mt-400 inline-block" href="/blog">
+        View all articles
       </AppLink>
     </>
   );
