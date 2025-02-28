@@ -1,8 +1,7 @@
 import AppLink from "@/component/app-link";
 import Heading from "@/component/heading";
-import Text from "@/component/text";
+import PublicationDateShort from "@/component/publication-date-short";
 import { BlogMetadata } from "@/type/blog-metadata";
-import { formatDate } from "@/util/format-date";
 import { Metadata } from "next";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -40,11 +39,9 @@ const Page = async () => {
                   {post.title}
                 </AppLink>
               </Heading>
-              <time className="my-100 block" dateTime={post.publishedAt}>
-                <Text className="italic" variant="sm">
-                  {formatDate(post.publishedAt)}
-                </Text>
-              </time>
+              <p className="my-100">
+                <PublicationDateShort date={post.publishedAt} />
+              </p>
               <p>{post.description}</p>
             </article>
           </li>

@@ -1,11 +1,11 @@
 import AppLink from "@/component/app-link";
 import Divider from "@/component/divider";
 import Heading from "@/component/heading";
+import PublicationDateShort from "@/component/publication-date-short";
 import SocialMediaLinks from "@/component/social-media-links";
 import Text from "@/component/text";
 import { BlogMetadata } from "@/type/blog-metadata";
 import { cn } from "@/util/cn";
-import { formatDate } from "@/util/format-date";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { cwd } from "node:process";
@@ -72,11 +72,9 @@ const HomePage = async () => {
                 {post.title}
               </Text>
             </AppLink>
-            <time className="mt-100 block" dateTime={post.publishedAt}>
-              <Text className="italic" variant="sm">
-                {formatDate(post.publishedAt)}
-              </Text>
-            </time>
+            <p className="mt-100">
+              <PublicationDateShort date={post.publishedAt} />
+            </p>
           </li>
         ))}
       </ul>

@@ -1,5 +1,4 @@
-import Text from "@/component/text";
-import { formatDate } from "@/util/format-date";
+import PublicationDateShort from "@/component/publication-date-short";
 import { memo } from "react";
 
 type Props = {
@@ -9,10 +8,7 @@ type Props = {
 const PublicationDate = ({ date }: Props) => {
   return (
     <p className="mt-150">
-      <Text
-        className="italic"
-        variant="sm"
-      >{`Published ${formatDate(date)}`}</Text>
+      <PublicationDateShort date={date} prefix="Published " />
     </p>
   );
 };
