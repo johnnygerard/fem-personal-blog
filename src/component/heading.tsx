@@ -39,7 +39,7 @@ const Heading = ({
           <span
             aria-hidden="true"
             className={cn(
-              "h-0.75 w-10 bg-blue-500",
+              "h-0.75 w-10 bg-blue-500 dark:bg-blue-700",
               "absolute -end-2.5 bottom-2 translate-x-full rtl:-translate-x-full",
             )}
           />
