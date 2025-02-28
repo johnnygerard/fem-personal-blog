@@ -19,7 +19,7 @@ const Footer = ({ className }: Props) => {
       <small>
         <Text variant="sm">Made with ❤️ and ☕️</Text>
       </small>
-      <SocialMediaLinks />
+      <SocialMediaLinks ariaLabel="footer" />
     </footer>
   );
 };

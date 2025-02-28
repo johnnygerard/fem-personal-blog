@@ -26,13 +26,14 @@ const LINKS = [
 ] as const;
 
 type Props = {
+  ariaLabel?: string;
   className?: string;
   hasBackground?: true;
 };
 
-const SocialMediaLinks = ({ className, hasBackground }: Props) => {
+const SocialMediaLinks = ({ ariaLabel, className, hasBackground }: Props) => {
   return (
-    <nav aria-label="Social media" className={className}>
+    <nav aria-label={ariaLabel ?? "Social media"} className={className}>
       <ul className={cn("flex", hasBackground ? "gap-150" : "gap-200")}>
         {LINKS.map(({ Icon, href }, index) => (
           <li key={index}>
