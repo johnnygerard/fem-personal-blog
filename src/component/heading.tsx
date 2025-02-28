@@ -22,9 +22,10 @@ const Heading = ({
   const Tag = `h${level}` as const;
 
   return (
-    <Tag className={cn("text-neutral-700 dark:text-neutral-0", className)}>
+    <Tag className={className}>
       <Text
         className={cn(
+          "text-neutral-700 dark:text-neutral-0",
           hasDecoration && "relative",
           hasUnderline && [
             "underline -underline-offset-[0.125rem] [text-decoration-skip-ink:none]",
