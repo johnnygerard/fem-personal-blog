@@ -13,7 +13,7 @@ const List = ({ children, className, isOrdered }: Props) => {
   return (
     <Tag
       className={cn(
-        "flex list-outside flex-col gap-150 ps-7 marker:font-bold",
+        "list-outside space-y-150 ps-7 marker:font-bold",
         isOrdered ? "list-decimal" : "list-disc",
         className,
       )}
