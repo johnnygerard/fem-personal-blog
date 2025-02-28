@@ -6,6 +6,7 @@ type Props = {
   children: ReactNode;
   className?: string;
   hasDecoration?: true;
+  hasUnderline?: true;
   level: 1 | 2 | 3 | 4 | 5 | 6;
   styleLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 };
@@ -14,6 +15,7 @@ const Heading = ({
   children,
   className,
   hasDecoration,
+  hasUnderline,
   level,
   styleLevel = level,
 }: Props) => {
@@ -22,7 +24,13 @@ const Heading = ({
   return (
     <Tag className={cn("text-neutral-700 dark:text-neutral-0", className)}>
       <Text
-        className={cn(hasDecoration && "relative")}
+        className={cn(
+          hasDecoration && "relative",
+          hasUnderline && [
+            "underline -underline-offset-[0.125rem] [text-decoration-skip-ink:none]",
+            "decoration-blue-500 decoration-[0.5rem] dark:decoration-blue-700",
+          ],
+        )}
         variant={`h${styleLevel}`}
       >
         {children}
