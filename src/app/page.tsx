@@ -1,7 +1,7 @@
 import AppLink from "@/component/app-link";
+import ArticlePreview from "@/component/article-preview";
 import Divider from "@/component/divider";
 import Heading from "@/component/heading";
-import PublicationDateShort from "@/component/publication-date-short";
 import SocialMediaLinks from "@/component/social-media-links";
 import Text from "@/component/text";
 import { BlogMetadata } from "@/type/blog-metadata";
@@ -50,31 +50,7 @@ const HomePage = async () => {
       <ul className="mt-400 space-y-300">
         {lastPosts.map((post) => (
           <li key={post.slug}>
-            <AppLink
-              className={cn(
-                "rounded-8 transition-opacity data-[hovered]:opacity-70",
-                "underline decoration-transparent transition-[text-decoration-color]",
-                "data-[hovered]:decoration-current",
-              )}
-              style={{
-                textDecorationStyle: "solid",
-                textDecorationSkipInk: "auto",
-                textDecorationThickness: "auto",
-                textUnderlineOffset: "auto",
-                textUnderlinePosition: "from-font",
-              }}
-              href={`/blog/${post.slug}`}
-            >
-              <Text
-                className="text-neutral-700 dark:text-neutral-0"
-                variant="h5"
-              >
-                {post.title}
-              </Text>
-            </AppLink>
-            <p className="mt-100">
-              <PublicationDateShort date={post.publishedAt} />
-            </p>
+            <ArticlePreview post={post} />
           </li>
         ))}
       </ul>

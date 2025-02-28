@@ -1,6 +1,5 @@
-import AppLink from "@/component/app-link";
+import ArticlePreview from "@/component/article-preview";
 import Heading from "@/component/heading";
-import PublicationDateShort from "@/component/publication-date-short";
 import { BlogMetadata } from "@/type/blog-metadata";
 import { Metadata } from "next";
 import { readFile } from "node:fs/promises";
@@ -33,17 +32,7 @@ const Page = async () => {
             className="border-t border-neutral-200 py-250 dark:border-neutral-700"
             key={post.slug}
           >
-            <article>
-              <Heading level={2} styleLevel={5}>
-                <AppLink className="rounded-8" href={`/blog/${post.slug}`}>
-                  {post.title}
-                </AppLink>
-              </Heading>
-              <p className="my-100">
-                <PublicationDateShort date={post.publishedAt} />
-              </p>
-              <p>{post.description}</p>
-            </article>
+            <ArticlePreview withDescription post={post} />
           </li>
         ))}
       </ul>
