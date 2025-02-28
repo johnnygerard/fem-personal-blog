@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "tailwindcss-react-aria-components";
 
 /* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
 @layer base {
@@ -27,6 +26,26 @@
       @slot;
     }
   }
+}
+
+/* @see https://rehype-pretty.pages.dev/#multiple-themes-dark-and-light-mode */
+/* @see https://shiki.style/guide/dual-themes */
+code[data-language][data-theme],
+code[data-language][data-theme] span {
+  /* Text color */
+  @apply text-(--shiki-light) dark:text-(--shiki-dark);
+
+  /* Background color */
+  /*@apply bg-(--shiki-light-bg) dark:bg-(--shiki-dark-bg);*/
+
+  /* Font style */
+  @apply [font-style:var(--shiki-light-font-style)] dark:[font-style:var(--shiki-dark-font-style)];
+
+  /* Font weight */
+  @apply font-(--shiki-light-font-weight) dark:font-(--shiki-dark-font-weight);
+
+  /* Text decoration */
+  @apply [text-decoration:var(--shiki-light-text-decoration)] dark:[text-decoration:var(--shiki-dark-text-decoration)];
 }
 
 /* Disable all animations when user prefers reduced motion */
@@ -101,6 +120,8 @@
   --spacing-600: 3rem;
   --spacing-800: 4rem;
   --spacing-1000: 5rem;
+
+  /*--default-transition-duration: 2s;*/
 
   @keyframes fadeIn {
     from {
