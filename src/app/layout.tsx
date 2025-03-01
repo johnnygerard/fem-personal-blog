@@ -106,16 +106,26 @@ const RootLayout = async ({ children }: Props) => {
               top: 0,
               left: 0,
               right: 0,
-              padding: "1rem",
-              backgroundColor: "#fff4f4",
-              color: "#d32f2f",
-              borderBottom: "2px solid currentColor",
-              textAlign: "center",
-              lineHeight: 1.5,
+              bottom: 0,
+              display: "grid",
+              placeItems: "center",
+              margin: "0 1rem",
+              pointerEvents: "none",
             }}
             role="alert"
           >
-            <p>
+            <p
+              style={{
+                padding: "1rem",
+                backgroundColor: "#fff4f4",
+                color: "#d32f2f",
+                border: "2px solid currentColor",
+                textAlign: "center",
+                lineHeight: 1.5,
+                pointerEvents: "auto",
+                maxWidth: "30rem",
+              }}
+            >
               JavaScript is required for this website to function properly.
               Please ensure that it is supported and enabled in your browser
               settings.
