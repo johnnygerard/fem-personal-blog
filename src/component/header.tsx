@@ -36,7 +36,7 @@ const Header = ({ className }: Props) => {
         )}
       >
         <Image
-          className="me-auto"
+          className="me-auto rounded-10"
           src="/asset/image/avatar.png"
           alt="avatar"
           width="40"
