@@ -12,7 +12,7 @@ const AppButton = ({ children, className, ...props }: ButtonProps) => {
         <Button
           className={cn(
             "bg-blue-500 text-neutral-900 data-[hovered]:bg-blue-700",
-            "rounded-10 px-300 py-150",
+            "rounded-10 px-300 py-150 transition-[background-color]",
           )}
           {...props}
         >
