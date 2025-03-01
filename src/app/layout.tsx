@@ -1,5 +1,6 @@
 import { loadTheme } from "@/app/actions";
 import AppRouterProvider from "@/component/app-router-provider";
+import BackgroundPattern from "@/component/background-pattern";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
 import ThemeProvider from "@/component/theme-provider";
@@ -69,11 +70,13 @@ const RootLayout = async ({ children }: Props) => {
           "font-sans text-[1.125rem]/[1.5] font-normal not-italic antialiased",
           "-tracking-[0.0125rem] text-neutral-600 dark:text-neutral-400",
           "bg-neutral-100 dark:bg-neutral-900",
-          "justify-center tb:flex",
+          "justify-center tb:flex dt:overflow-x-hidden",
         )}
       >
         <AppRouterProvider>
           <ThemeProvider initialTheme={theme}>
+            <BackgroundPattern className="top-0 right-0 translate-x-1/2" />
+            <BackgroundPattern className="top-56.75 left-0 -translate-x-1/2" />
             <div
               className={cn(
                 "relative flex min-h-screen min-w-min flex-col tb:w-[40rem]",
