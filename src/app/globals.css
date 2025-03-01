@@ -122,8 +122,6 @@ code[data-language][data-theme] span {
   --spacing-800: 4rem;
   --spacing-1000: 5rem;
 
-  /*--default-transition-duration: 2s;*/
-
   @keyframes fadeIn {
     from {
       opacity: 0;
