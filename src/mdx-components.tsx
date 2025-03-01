@@ -1,16 +1,12 @@
 import Divider from "@/component/divider";
 import Heading from "@/component/heading";
+import List from "@/component/list";
 import Text from "@/component/text";
 import { cn } from "@/util/cn";
 import type { MDXComponents } from "mdx/types";
 
 const MARGIN_TOP = "mt-150";
 const TABLE_BORDER_COLORS = "border-neutral-200 dark:border-neutral-700";
-
-const listClassName = cn(
-  MARGIN_TOP,
-  "flex list-outside flex-col gap-150 ps-7 marker:font-bold",
-);
 
 export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
   blockquote: ({ children }) => (
@@ -66,7 +62,9 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
     </Heading>
   ),
   ol: ({ children }) => (
-    <ol className={cn(listClassName, "list-decimal")}>{children}</ol>
+    <List className={MARGIN_TOP} isOrdered={true}>
+      {children}
+    </List>
   ),
   p: ({ children }) => (
     <p className={cn(MARGIN_TOP, "group-[.is-callout]:mt-75")}>{children}</p>
@@ -126,7 +124,9 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
     </th>
   ),
   ul: ({ children }) => (
-    <ul className={cn(listClassName, "list-disc")}>{children}</ul>
+    <List className={MARGIN_TOP} isOrdered={false}>
+      {children}
+    </List>
   ),
   ...components,
 });

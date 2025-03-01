@@ -1,4 +1,5 @@
 "use client";
+import AppLink from "@/component/app-link";
 import NavigationBar from "@/component/navigation-bar";
 import NavigationMenu from "@/component/navigation-menu";
 import NavigationMenuToggle from "@/component/navigation-menu-toggle";
@@ -35,14 +36,15 @@ const Header = ({ className }: Props) => {
           "shadow-[0_6px_10px_rgba(123,123,123,0.03)]",
         )}
       >
-        <Image
-          className="me-auto"
-          src="/asset/image/avatar.png"
-          alt="avatar"
-          width="40"
-          height="40"
-          priority
-        />
+        <AppLink className="me-auto overflow-hidden rounded-10" href="/">
+          <Image
+            src="/asset/image/avatar.png"
+            alt="avatar"
+            width="40"
+            height="40"
+            priority
+          />
+        </AppLink>
         <NavigationMenuToggle
           isExpanded={disclosureState.isExpanded}
           triggerRef={triggerRef}

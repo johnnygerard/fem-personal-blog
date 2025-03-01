@@ -10,6 +10,10 @@
   a {
     outline: none;
   }
+
+  input {
+    outline: none;
+  }
 }
 
 @custom-variant dark {
@@ -30,22 +34,22 @@
 
 /* @see https://rehype-pretty.pages.dev/#multiple-themes-dark-and-light-mode */
 /* @see https://shiki.style/guide/dual-themes */
+/*noinspection CssUnresolvedCustomProperty*/
 code[data-language][data-theme],
 code[data-language][data-theme] span {
-  /* Text color */
-  @apply text-(--shiki-light) dark:text-(--shiki-dark);
+  color: var(--shiki-light);
+  /*background-color: var(--shiki-light-bg);*/
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
 
-  /* Background color */
-  /*@apply bg-(--shiki-light-bg) dark:bg-(--shiki-dark-bg);*/
-
-  /* Font style */
-  @apply [font-style:var(--shiki-light-font-style)] dark:[font-style:var(--shiki-dark-font-style)];
-
-  /* Font weight */
-  @apply font-(--shiki-light-font-weight) dark:font-(--shiki-dark-font-weight);
-
-  /* Text decoration */
-  @apply [text-decoration:var(--shiki-light-text-decoration)] dark:[text-decoration:var(--shiki-dark-text-decoration)];
+  @variant dark {
+    color: var(--shiki-dark);
+    /*background-color: var(--shiki-dark-bg);*/
+    font-style: var(--shiki-dark-font-style);
+    font-weight: var(--shiki-dark-font-weight);
+    text-decoration: var(--shiki-dark-text-decoration);
+  }
 }
 
 /* Disable all animations when user prefers reduced motion */
