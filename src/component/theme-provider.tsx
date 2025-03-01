@@ -15,6 +15,21 @@ const ThemeProvider = ({ children, initialTheme }: Props) => {
     THEME.LIGHT,
   );
 
+  // Listen for theme change from other tabs
+  useEffect(() => {
+    if (window.BroadcastChannel) {
+      const channel = new BroadcastChannel(THEME_KEY);
+
+      channel.onmessage = ({ data }: MessageEvent<THEME>) => {
+        setTheme(data);
+      };
+
+      return () => {
+        channel.close();
+      };
+    }
+  }, []);
+
   useEffect(() => {
     const root = window.document.documentElement;
 
@@ -57,6 +72,14 @@ const ThemeProvider = ({ children, initialTheme }: Props) => {
       "path=/",
       "samesite=lax",
     ].join("; ");
+
+    // Broadcast theme change to other tabs
+    if (window.BroadcastChannel) {
+      const channel = new BroadcastChannel(THEME_KEY);
+
+      channel.postMessage(theme);
+      channel.close();
+    }
   };
 
   return (
