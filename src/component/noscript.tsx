@@ -24,6 +24,7 @@ const Noscript = () => {
             backgroundColor: "#fff4f4",
             color: "#d32f2f",
             border: "2px solid currentColor",
+            borderRadius: "0.5rem",
             textAlign: "center",
             lineHeight: 1.5,
             pointerEvents: "auto",
