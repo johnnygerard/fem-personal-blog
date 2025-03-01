@@ -1,7 +1,14 @@
 import Heading from "@/component/heading";
 import NewsletterForm from "@/component/newsletter-form";
 import Text from "@/component/text";
+import { Metadata } from "next";
 import { memo } from "react";
+
+export const metadata: Metadata = {
+  title: "Newsletter",
+  description:
+    "Sign up for my newsletter to stay updated on my latest articles, coding tutorials, and personal adventures.",
+};
 
 const Page = () => {
   return (
