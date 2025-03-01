@@ -27,6 +27,11 @@ const Page = () => {
       <AppButton className="mt-200 inline-block" type="submit">
         Stay updated
       </AppButton>
+      <p className="mt-100">
+        <small>
+          <Text variant="sm">Unsubscribe anytime. No spam, I promise 🙂</Text>
+        </small>
+      </p>
     </>
   );
 };
