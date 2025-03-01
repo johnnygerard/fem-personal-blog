@@ -7,7 +7,7 @@ import ThemeToggle from "@/component/theme-toggle";
 import { cn } from "@/util/cn";
 import { useDisclosureState } from "@react-stately/disclosure";
 import Image from "next/image";
-import { memo, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { useButton, useDisclosure } from "react-aria";
 
 type Props = {
@@ -25,6 +25,14 @@ const Header = ({ className }: Props) => {
     panelRef,
   );
   const { buttonProps: triggerProps } = useButton(buttonProps, triggerRef);
+
+  useEffect(() => {
+    if (panelRef.current === null) return;
+
+    panelRef.current.style.height = disclosureState.isExpanded
+      ? `${panelRef.current.scrollHeight}px`
+      : "0";
+  }, [disclosureState.isExpanded]);
 
   return (
     <header className={className}>
@@ -53,7 +61,11 @@ const Header = ({ className }: Props) => {
         <NavigationBar />
         <ThemeToggle />
       </div>
-      <div className="tb:hidden" ref={panelRef} {...panelProps}>
+      <div
+        className={cn("overflow-y-hidden transition-[height] tb:hidden")}
+        ref={panelRef}
+        {...panelProps}
+      >
         <NavigationMenu className="mt-150" />
       </div>
     </header>

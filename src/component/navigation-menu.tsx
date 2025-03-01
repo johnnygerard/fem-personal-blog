@@ -31,7 +31,7 @@ const NavigationMenu = ({ className }: Props) => {
               "border-neutral-200 dark:border-neutral-700",
             )}
           >
-            <AppLink href={href}>
+            <AppLink className="rounded-4" href={href}>
               {({ isHovered }) => {
                 const isHighlighted = pathname === href || isHovered;
 

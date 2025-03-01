@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
-/* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
 @layer base {
   button:enabled {
     cursor: pointer;
-    outline: none;
   }
 
-  a {
-    outline: none;
-  }
-
+  a,
+  button:enabled,
   input {
+    /* `outline` is set to `none` to avoid conflicts with React Aria focus ring */
     outline: none;
   }
 }
@@ -124,8 +121,6 @@ code[data-language][data-theme] span {
   --spacing-600: 3rem;
   --spacing-800: 4rem;
   --spacing-1000: 5rem;
-
-  /*--default-transition-duration: 2s;*/
 
   @keyframes fadeIn {
     from {

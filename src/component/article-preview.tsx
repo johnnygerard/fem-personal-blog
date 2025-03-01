@@ -12,7 +12,7 @@ type Props = {
 
 const ArticlePreview = ({ post, withDescription }: Props) => {
   return (
-    <article>
+    <>
       <AppLink
         className={cn(
           "rounded-8 transition-opacity data-[hovered]:opacity-70",
@@ -36,7 +36,7 @@ const ArticlePreview = ({ post, withDescription }: Props) => {
         <PublicationDateShort date={post.publishedAt} />
       </p>
       {withDescription && <p className="mt-100">{post.description}</p>}
-    </article>
+    </>
   );
 };
 
