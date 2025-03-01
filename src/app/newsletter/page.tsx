@@ -1,5 +1,5 @@
-import AppButton from "@/component/app-button";
 import Heading from "@/component/heading";
+import NewsletterForm from "@/component/newsletter-form";
 import Text from "@/component/text";
 import { memo } from "react";
 
@@ -24,14 +24,7 @@ const Page = () => {
           </Text>
         </strong>
       </p>
-      <AppButton className="mt-200 inline-block" type="submit">
-        Stay updated
-      </AppButton>
-      <p className="mt-100">
-        <small>
-          <Text variant="sm">Unsubscribe anytime. No spam, I promise 🙂</Text>
-        </small>
-      </p>
+      <NewsletterForm className="mt-300" />
     </>
   );
 };
