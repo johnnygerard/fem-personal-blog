@@ -28,6 +28,16 @@ from [Frontend Mentor](https://www.frontendmentor.io/).
 - Linter: [ESLint](https://eslint.org/)
 - AI assistant: [GitHub Copilot](https://github.com/features/copilot)
 
+## Screenshots
+
+### Home Page (Mobile - Light Mode)
+
+![home page mobile light mode](/doc/screenshot/home-mobile-light.avif)
+
+### Blog Page (Desktop - Dark Mode)
+
+![blog page desktop dark mode](/doc/screenshot/blog-desktop-dark.avif)
+
 ## Copyright
 
 © 2025 Johnny Gérard
