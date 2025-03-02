@@ -30,7 +30,7 @@ const APP_NAME = "Personal blog";
 const DESCRIPTION = `Frontend Mentor challenge: ${APP_NAME}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com/placeholder"),
+  metadataBase: new URL("https://fem-personal-blog-jgerard.vercel.app"),
   title: {
     template: `%s | ${APP_NAME}`,
     default: APP_NAME,
