@@ -4,6 +4,7 @@ import List from "@/component/list";
 import Text from "@/component/text";
 import { cn } from "@/util/cn";
 import type { MDXComponents } from "mdx/types";
+import { cloneElement } from "react";
 
 const MARGIN_TOP = "mt-150";
 const TABLE_BORDER_COLORS = "border-neutral-200 dark:border-neutral-700";
@@ -19,8 +20,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
     </blockquote>
   ),
   code: ({ children, ...props }) => {
-    const isInline = !props.isCodeBlock;
-    delete props.isCodeBlock;
+    const isInline = !props["is-code-block"];
 
     return (
       <code
@@ -77,13 +77,7 @@ export const useMDXComponents = (components: MDXComponents): MDXComponents => ({
         "border border-neutral-200 dark:border-neutral-700",
       )}
     >
-      {{
-        ...children,
-        props: {
-          ...children.props,
-          isCodeBlock: true,
-        },
-      }}
+      {cloneElement(children, { ["is-code-block"]: "true" })}
     </pre>
   ),
   strong: ({ children }) => <strong className="font-bold">{children}</strong>,

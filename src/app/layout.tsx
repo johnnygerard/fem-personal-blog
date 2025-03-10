@@ -1,14 +1,12 @@
-import { loadTheme } from "@/app/actions";
 import AppRouterProvider from "@/component/app-router-provider";
 import BackgroundPattern from "@/component/background-pattern";
 import Footer from "@/component/footer";
 import Header from "@/component/header";
 import Noscript from "@/component/noscript";
-import ThemeProvider from "@/component/theme-provider";
 import VerticalLine from "@/component/vertical-line";
-import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
 import type { Metadata } from "next";
+import { loadTheme, ThemeProvider } from "next-theme-provider";
 import { DM_Sans, Fira_Code } from "next/font/google";
 import "./globals.css";
 import { memo, ReactNode } from "react";
@@ -63,7 +61,7 @@ const RootLayout = async ({ children }: Props) => {
   return (
     <html
       className={cn(dmSans.variable, firaCode.variable)}
-      data-theme={theme === THEME.SYSTEM ? null : theme}
+      data-theme={theme}
       lang="en-US"
     >
       <body
