@@ -1,7 +1,6 @@
 "use client";
-import { useAppTheme } from "@/hook/use-app-theme";
-import { THEME } from "@/type/theme";
 import { cn } from "@/util/cn";
+import { useThemeContext } from "next-theme-provider";
 import Image from "next/image";
 import { memo } from "react";
 
@@ -10,12 +9,9 @@ type Props = {
 };
 
 const BackgroundPattern = ({ className }: Props) => {
-  const { systemTheme, theme } = useAppTheme();
-  const isDark =
-    (theme === THEME.SYSTEM && systemTheme === THEME.DARK) ||
-    theme === THEME.DARK;
+  const { isDark } = useThemeContext();
 
-  return (
+  return isDark !== null ? (
     <Image
       className={cn("absolute max-dt:hidden", className)}
       src={`/asset/image/pattern-${isDark ? "dark" : "light"}.svg`}
@@ -23,7 +19,7 @@ const BackgroundPattern = ({ className }: Props) => {
       height="423"
       alt=""
     />
-  );
+  ) : null;
 };
 
 export default memo(BackgroundPattern);

@@ -14,16 +14,16 @@
 }
 
 @custom-variant dark {
-  /*noinspection CssInvalidAtRule*/
   &:root[data-theme="dark"],
   :root[data-theme="dark"] & {
+    /*noinspection CssInvalidAtRule*/
     @slot;
   }
 
-  /*noinspection CssInvalidAtRule*/
-  &:root:not([data-theme]),
-  :root:not([data-theme]) & {
+  &:root[data-theme="system"],
+  :root[data-theme="system"] & {
     @media (prefers-color-scheme: dark) {
+      /*noinspection CssInvalidAtRule*/
       @slot;
     }
   }
